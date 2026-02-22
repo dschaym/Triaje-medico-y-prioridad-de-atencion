@@ -120,3 +120,26 @@ switch (tipoAtencion)
             prioridad = 3;
         break;
 }
+
+string acion;
+if (prioridad == 1)
+    acion = "Reanimacion inmediata";
+else if (prioridad == 2)
+    acion = "Observacion";
+else
+    acion = "Consulta general";
+
+string nombreTipo;
+if (tipoAtencion == 1)
+    nombreTipo = "Emergencia";
+else if (tipoAtencion == 2)
+    nombreTipo = "Consulta";
+else if (tipoAtencion == 3)
+    nombreTipo = "Pediatria";
+else
+    nombreTipo = "Traumatologia";
+
+Console.WriteLine("RESULTADOS DEL TRIAJE MEDICO");
+Console.WriteLine($"Tipo de atencion: {nombreTipo}");
+Console.WriteLine($"Prioridad de atencion: {prioridad}");
+Console.WriteLine($"Accion a tomar: {acion}");
