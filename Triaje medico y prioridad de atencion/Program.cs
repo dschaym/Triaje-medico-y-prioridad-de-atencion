@@ -47,3 +47,76 @@ else if (presionS < 50 || presionS > 200)
     Console.WriteLine("Presion sistolica no valida");
     return;
 }
+
+int prioridad = 3;
+switch (tipoAtencion)
+{
+    case 1: // Emergencia
+        if (saturacionO < 90)
+        {
+            prioridad = 1;
+        }
+        else
+        {
+            if (presionS < 90)
+                prioridad = 1;
+            else
+            {
+                if (nivelDolor >= 7)
+                    prioridad = 2;
+                else
+                    prioridad = 3;
+            }
+        }
+        break;
+    case 2: // Consulta
+        if (edad > 65 || edad < 5)
+        {
+            prioridad = 2;
+        }
+        else
+            prioridad = 3;
+        break;
+    case 3: // Pediatria
+        if (edad < 12)
+        {
+            if (temperatura >= 39|| nivelDolor >= 5)
+            {
+                prioridad = 2;
+                if (edad < 2 || saturacionO < 92)
+                    prioridad = 1;
+
+            }
+            else if (temperatura >= 37.5 || nivelDolor >= 3)
+                prioridad = 2;
+            else
+                prioridad = 3;
+        }
+        else
+            if (edad >= 12 && edad <= 17)
+            {
+                if (temperatura >= 38 || nivelDolor >= 5)
+                {
+                    prioridad = 2;
+                    if (saturacionO < 92)
+                        prioridad = 1;
+                }
+                else if (temperatura >= 37.5 || nivelDolor >= 3)
+                    prioridad = 2;
+                else
+                    prioridad = 3;
+            }
+            else
+                prioridad = 2;
+        break;
+    case 4: // Traumatologia
+        if (nivelDolor >= 7)
+        {
+            prioridad = 1;
+        }
+        else if (nivelDolor >= 4)
+            prioridad = 2;
+        else
+            prioridad = 3;
+        break;
+}
