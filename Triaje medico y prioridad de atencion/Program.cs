@@ -1,1 +1,18 @@
-﻿
+﻿Console.WriteLine("TRIAJE MEDICO Y PRIORIDAD DE ATENCION");
+Console.WriteLine("Tipo de atencion:");
+Console.WriteLine("* 1. Emergencia");
+Console.WriteLine("* 2. Consulta");
+Console.WriteLine("* 3.Pediatria");
+Console.WriteLine("* 4. Traumatologia");
+Console.WriteLine("Ingrese el tipo de atencion:");
+int tipoAtencion = int.Parse(Console.ReadLine());
+Console.WriteLine("Edad del paciente:");
+int edad = int.Parse(Console.ReadLine());
+Console.WriteLine("Temperatura del paciente entre (30-45 °C):");
+double temperatura = double.Parse(Console.ReadLine());
+Console.WriteLine("Saturacion de oxigeno (80-100)");
+int saturacionO = int.Parse(Console.ReadLine());
+Console.WriteLine("Nivel de dolor (0-10)");
+int nivelDolor = int.Parse(Console.ReadLine());
+Console.WriteLine("Presion sistolica (50-200 mmHg)");
+int presionS = int.Parse(Console.ReadLine());
